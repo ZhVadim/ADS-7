@@ -17,7 +17,7 @@ class TPQueue {
         return item;
     }
 
-  public:
+ public:
     TPQueue() : head(nullptr) { }
     void push(const T& item) {
         if (!head) {
