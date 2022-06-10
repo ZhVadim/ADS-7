@@ -18,15 +18,15 @@ class TPQueue {
     }
  public:
     TPQueue() : head(nullptr) { }
-    void push(const T& item) {
+    void push (const T& item) {
+        if (!head) {
+            head = create(item);
+            return;
+        }
         if (item.prior > head->value.prior) {
             ITEM* nitem = create(item);
             nitem->next = head;
             head = nitem;
-            return;
-        }
-        if (!head) {
-            head = create(item);
             return;
         }
         ITEM* temp = head;
